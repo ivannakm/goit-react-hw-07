@@ -3,7 +3,7 @@ import { useId } from "react";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -27,11 +27,11 @@ const ContactForm = () => {
   const numberId = useId();
 
   const handleSubmit = (values, actions) => {
-    const newContact = {
-      ...values,
-      id: crypto.randomUUID(),
-    };
-    dispatch(addContact(newContact));
+    // const newContact = {
+    //   ...values,
+    //   id: crypto.randomUUID(),
+    // };
+    dispatch(addContact(values));
     actions.resetForm();
   };
 
