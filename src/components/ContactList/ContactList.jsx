@@ -5,8 +5,8 @@ import {
   selectError,
   selectFilteredContacts,
   selectLoading,
-} from "../../redux/contactsSlice";
-import { deleteContact } from "../../redux/contactsOps";
+} from "../../redux/contacts/selectors";
+import { deleteContact } from "../../redux/contacts/operations";
 
 const ContactList = () => {
   const dispatch = useDispatch();
